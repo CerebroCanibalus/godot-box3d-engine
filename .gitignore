@@ -1,0 +1,30 @@
+# Build artifacts (regenerables con build-and-install.bat)
+build/
+.cache/
+build.log
+*.ninja
+*.ninja_log
+*.ninja_deps
+
+# Snapshot de origen: su .git interno y binarios no se versionan
+godot-box3d-src/.git/
+godot-box3d-src/bin/
+*.dll
+*.so
+*.dylib
+*.lib
+*.exp
+*.pdb
+
+# Dependencias de CMake (se vuelven a bajar)
+_deps/
+
+# Editor / SO
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+*.orig
+*.tmp
