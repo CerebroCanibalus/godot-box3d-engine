@@ -1,0 +1,37 @@
+name: Petición de feature
+description: Parámetro de PhysicsServer3D sin mapear, soporte de plataforma o métrica que falta.
+title: "[feat]: "
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Aquí lo que manda es no romper las escenas existentes: ver CONTRIBUTING.md para el enfoque.
+  - type: textarea
+    id: que-falta
+    attributes:
+      label: Qué falta
+      description: Nodo, ajuste o consulta de Godot que hoy no funciona con Box3D.
+    validations:
+      required: true
+  - type: textarea
+    id: por-que
+    attributes:
+      label: Por qué importa
+      description: Qué caso de uso real queda bloqueado.
+    validations:
+      required: true
+  - type: textarea
+    id: alternativa
+    attributes:
+      label: Alternativa considerada
+      description: Si la hay (otro joint, workaround, otro binding).
+  - type: checkboxes
+    id: terminos
+    attributes:
+      label: Comprobaciones
+      options:
+        - label: He buscado en los issues abiertos y no encontré esta petición
+          required: true
+        - label: Acepto el Code of Conduct
+          required: true

@@ -1,0 +1,61 @@
+name: Reporte de bug
+description: Crash, colisión mal resuelta o parámetro de joint que no hace lo que dice.
+title: "[bug]: "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Un bug de física vive o muere con la reproducción: cuanto más exacta, más rápido el fix.
+  - type: textarea
+    id: que-pasa
+    attributes:
+      label: Qué pasa
+      description: Comportamiento observado y comportamiento esperado.
+    validations:
+      required: true
+  - type: textarea
+    id: repro
+    attributes:
+      label: Cómo reproducirlo
+      description: Escena, formas y joints mínimos; ajustes "physics/box3d/..." relevantes.
+      placeholder: |
+        1. ...
+        2. ...
+    validations:
+      required: true
+  - type: input
+    id: entorno
+    attributes:
+      label: Entorno
+      description: Versión de Godot, SO y plataforma.
+      placeholder: Godot 4.7.1 · Windows 11 x64
+    validations:
+      required: true
+  - type: dropdown
+    id: parches
+    attributes:
+      label: Parches aplicados en tu build
+      options:
+        - M2 (sub-pasos configurables)
+        - M3 (guard de normales degeneradas)
+        - H2 (límites de joints con softness propio)
+        - Todos los anteriores
+        - Ninguno (upstream limpio)
+        - No lo sé
+    validations:
+      required: true
+  - type: textarea
+    id: evidencia
+    attributes:
+      label: Evidencia
+      description: Log, backtrace o CSV del benchmark.
+  - type: checkboxes
+    id: terminos
+    attributes:
+      label: Comprobaciones
+      options:
+        - label: He buscado en los issues abiertos y no encontré este reporte
+          required: true
+        - label: Acepto el Code of Conduct
+          required: true

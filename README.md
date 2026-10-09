@@ -1,5 +1,7 @@
 # godot-box3d-engine
 
+![License: GPL-3.0](https://img.shields.io/badge/licencia-GPL--3.0-blue) ![Godot](https://img.shields.io/badge/Godot-4.4%2B-478cbf) ![Platform](https://img.shields.io/badge/plataforma-Windows%20x64-lightgrey)
+
 **Box3D no se instala en Godot con un clic. Este repositorio es lo que hay entre los dos.**
 
 `godot-box3d-engine` es la **instrumentación completa del motor de física Box3D dentro de Godot 4**: no un plugin que expone unas cuantas funciones, sino la implementación íntegra de `PhysicsServer3D` sobre Box3D — cuerpos, formas, espacios, joints, consultas, `CharacterBody3D`, áreas y ragdolls — compilada como GDExtension en C++.
@@ -23,6 +25,16 @@
 | **Evidencia** | "funciona" | Benchmark CSV contra Jolt con 3000 cuerpos + fixes **medidos antes y después** |
 
 La filosofía es la de la propia comparativa del upstream: otros bindings dan *más* de Box3D (nodos propios, explosiones, gyroscópico); **este da Box3D *dentro* de tu proyecto tal cual está** — addons de terceros, escenas existentes y costumbres de Godot siguen sirviendo.
+
+## Cuándo NO usarlo
+
+Sinceridad antes que instalación a toda costa:
+
+- **Necesitas Android o web.** Este build está probado en Windows x64 (Linux compila); ni este binding ni su upstream dan binarios móviles/web.
+- **Quieres la superficie entera de Box3D** (explosiones, torque gyroscópico, joint de rueda con constraint real, profiling del solver): eso lo da [box3d-godot](https://github.com/Stink-O/box3d-godot) con nodos propios, a costa de reescribir tus escenas y de que los addons de física de terceros dejen de aplicar.
+- **SoftBody3D o un 6DOFJoint con límites por eje.** No existen en este backend; Box3D no tiene constraints por eje que mapear.
+- **Tu juego es pequeño y sin red.** Con Jolt o Godot Physics vas a la misma. Lo que aporta aquí es el determinismo (predicción cliente/servidor con la misma simulación) y los números de stress de más abajo.
+- **Es tu primera vez con C++.** El propio upstream se declara *early and experimental*; este repo lo parchea y lo mide, no lo madura.
 
 ## Parches propios (por qué este árbol y no el upstream tal cual)
 

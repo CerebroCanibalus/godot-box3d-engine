@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Box3D (motor upstream)
+    url: https://github.com/erincatto/box3d/issues
+    about: Bugs del motor en sí, sin dios de Godot: se reportan aquí.
+  - name: godot-box3d (binding base)
+    url: https://github.com/bearlikelion/godot-box3d/issues
+    about: Problemas del binding original, sin nuestros parches.

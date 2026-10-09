@@ -1,5 +1,14 @@
 # Seguridad
 
+## Versiones soportadas
+
+Solo se mantienen actualizaciones de seguridad en el snapshot actual:
+
+| Versión | Soportada |
+| ------- | ------------------ |
+| `main` (snapshot actual) | :white_check_mark: |
+| Snapshots anteriores | :x: |
+
 ## Alcance
 
 Este repositorio compila una extensión nativa (C++) que se ejecuta dentro del proceso de Godot. Se considera vulnerabilidad:
